@@ -125,43 +125,6 @@ client.on("ready", () => {
     }
   })
 }
-// Code Case
-{
-  client.codes = new Discord.Collection()
-  const codes = fs.readdirSync("./Commands/Code").filter(file => file.endsWith(".js"))
-  for (file of codes) {
-    const codeName = file.split(".")[0]
-    const code = require(`./Commands/Code/${codeName}`)
-    client.codes.set(codeName, code)
-  }
-  client.on("message", message => {
-    if (message.content.startsWith(prefix)) {
-      const args = message.content.slice(prefix.length).trim().split(/ + /g)
-      const codeName = args.shift()
-      const code = client.codes.get(codeName)
-      if(!code) return
-      code.run(client, message, args)
-    }
-  })
-
-  // base code 2
-  client.codes2 = new Discord.Collection()
-  const codes2 = fs.readdirSync("./Commands/Moderator").filter(file => file.endsWith(".js"))
-  for (file of codes2) {
-    const codeName2 = file.split(".")[0]
-    const code2 = require(`./Commands/Moderator/${codeName2}`)
-    client.codes2.set(codeName2, code2)
-  }
-  client.on("message", message => {
-    if (message.content.startsWith(prefix)) {
-      const args = message.content.slice(prefix.length).trim().split(/ + /g)
-      const codeName2 = args.shift()
-      const code2 = client.codes2.get(codeName2)
-      if(!code2) return
-      code2.run(client, message, args)
-    }
-  })
-}
 // Action Case
 {
   client.Actions = new Discord.Collection()
