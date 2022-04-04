@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js')
 const { token } = require('./config.json')
 const client = new Discord.Client({
-  intents: ["GUILDS", "GUILD_MESSAGES"],
+  intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS", "GUILD_BANS"],
   allowedMentions: ["users"]
 })
 const fs = require("fs")
@@ -141,6 +141,25 @@ client.on("ready", () => {
       const Action = client.Actions.get(ActionName)
       if(!Action) return
       Action.run(client, message, args)
+    }
+  })
+}
+// Moderator Case
+{
+  client.Mods = new Discord.Collection()
+  const Mods = fs.readdirSync("./Commands/Moderator").filter(file => file.endsWith(".js"))
+  for (file of Mods) {
+    const ModName = file.split(".")[0]
+    const mod = require(`./Commands/Moderator/${ModName}`)
+    client.Mods.set(ModName, mod)
+  }
+  client.on("message", message => {
+    if (message.content.startsWith(prefix)) {
+      const args = message.content.slice(prefix.length).trim().split(/ + /g)
+      const ModName = args.shift()
+      const mod = client.Mods.get(ModName)
+      if(!mod) return
+      mod.run(client, message, args)
     }
   })
 }
