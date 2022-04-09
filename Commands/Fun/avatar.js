@@ -5,7 +5,6 @@ exports.run = (client, message, args) => {
     const Embed = new Discord.MessageEmbed()
     .setTitle(`**Avatar của ${member.displayName}**`)
     .setImage(avatarURL)
-    .setColor("AQUA")
     message.channel.send({embeds:[Embed]})
 }
 

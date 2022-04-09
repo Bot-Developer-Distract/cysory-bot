@@ -2,9 +2,7 @@
   "dependencies": {
     "cpu-stat": "^2.0.1",
     "discord.js": "^13.6.0",
-    "express": "^4.17.3",
     "moment": "^2.29.1",
-    "os": "^0.1.2",
-    "wokcommands": "^1.5.3"
+    "os": "^0.1.2"
   }
 }

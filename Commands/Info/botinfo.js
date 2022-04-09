@@ -11,7 +11,6 @@ exports.run = (client, message, args) => {
     .addField("Uptime ", `${duration(client.uptime).map(i=>`\`${i}\``).join(", ")}`, true)
     .addField("Company", "\`Cysory com.\`")
     .setFooter("bot coded by Kravon Lidan #0378", "https://cdn.discordapp.com/avatars/867741983774212166/dab0ed9e326f4feb3164bc11215c7d0a.png?size=4096")
-    .setColor("AQUA")
     message.channel.send({embeds:[botinfoEmbed]})
 
     function duration(duration, useMilli = false) {
