@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
     .addField("❯ Moderator [4 lệnh]", "\`kick\` \`ban\` \`threadcreate\` \`threaddel\`")
     .setFooter("bot coded by Kravon Lidan #0378", "https://cdn.discordapp.com/avatars/867741983774212166/dab0ed9e326f4feb3164bc11215c7d0a.png?size=4096")
     message.channel.send({embeds:[helpEmbed]})
-    message.channel.send("\`\`\`Cần nhiều sự giúp đỡ hơn? hay có gì khúc mắc? hãy join ngay server bên dưới hoặc nhắn qua DMs cho progammer: Kravon Lidan#0378\`\`\`\n ||https://discord.gg/GvVdEK2QPP||")
+    message.channel.send("\`\`\`Cần nhiều sự giúp đỡ hơn? hay có gì khúc mắc? hãy join ngay server: https://discord.gg/GvVdEK2QPP hoặc nhắn qua DMs cho progammer: Kravon Lidan#0378\`\`\`")
 }
 
 exports.name = "help"

@@ -125,25 +125,6 @@ client.on("ready", () => {
     }
   })
 }
-// Image Case
-{
-  client.images = new Discord.Collection()
-  const images = fs.readdirSync("./Commands/Image").filter(file => file.endsWith(".js"))
-  for (file of images) {
-    const imageName = file.split(".")[0]
-    const img = require(`./Commands/Image/${imageName}`)
-    client.images.set(imageName,img)
-  }
-  client.on("message", message => {
-    if (message.content.startsWith(prefix)) {
-      const args = message.content.slice(prefix.length).trim().split(/ + /g)
-      const imageName = args.shift()
-      const img = client.images.get(imageName)
-      if(!img) return
-      img.run(client, message, args)
-    }
-  })
-}
 // Info Case
 {
   client.infos = new Discord.Collection()
