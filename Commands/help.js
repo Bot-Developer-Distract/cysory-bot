@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 exports.run = (client, message, args) => {
     const helpEmbed = new Discord.MessageEmbed()
     .setTitle("HELP BOARD :recycle: CYSORY COM")
-    .setDescription(`Danh sách lệnh của bot Cysory \n===========================\nPrefix của bot là: \`c/\`\n===========================\nTổng lệnh hiện có: ${client.commands.size}\n===========================\nNhập \`c/help {tên lệnh}\` để xem kĩ thông tin của lệnh\n===========================\nVì code có giới hạn nên thay vì bấm cách 1 lần thì hãy bấm space 2 lần rồi mới mention nhé!`)
+    .setDescription(`Danh sách lệnh của bot Cysory \n===========================\nPrefix của bot là: \`c/\`\n===========================\nTổng lệnh hiện có: \`26\`\n===========================\nNhập \`c/help {tên lệnh}\` để xem kĩ thông tin của lệnh\n===========================\nVì code có giới hạn nên thay vì bấm cách 1 lần thì hãy bấm space 2 lần rồi mới mention nhé!`)
     .addField("❯ Action [3 lệnh]", "\`punch\` \`huấn\` \`chat\`")
     .addField("❯ Discord.js [10 lệnh]", "\`djs\` \`djs BOT TOKEN\` \`djs MAIN FILE\` \`djs BUTTON\` \`djs COMMAND HANDLER\` \`CREATING COMMANDS\` \`EMBED\` \`REACTION\` \`SLASH COMMANDS\` \`THREADS\`")
     .addField("❯ Fun [5 lệnh]", "\`8 ball\` \`hack\` \`avatar\` \`BKAV\` \`whois\`")
