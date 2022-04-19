@@ -1,4 +1,5 @@
 const Discord = require("discord.js")
+
 module.exports = {
     commands: ['help'],
     description: 'Help board for user',
@@ -16,3 +17,4 @@ module.exports = {
         message.channel.send("\`\`\`Cần nhiều sự giúp đỡ hơn? hay có gì khúc mắc? hãy join ngay server: https://discord.gg/GvVdEK2QPP hoặc nhắn qua DMs cho progammer: Kravon Lidan#0378\`\`\`")
     }
 }
+
