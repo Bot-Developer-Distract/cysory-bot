@@ -1,5 +1,9 @@
-exports.run = (client, message, args) => {
-    message.channel.send("Bắc Kì Ăn Vạ: hãng công nghệ nổ nhất thế giới")
-}
+const Discord = require("discord.js")
+module.exports = {
+    commands: ['BKAV'],
+    description: 'BKAV joke',
 
-exports.name = "BKAV"
+    callback: (message, args) => {
+        message.channel.send("Bắc Kì Ăn Vạ: hãng công nghệ nổ nhất thế giới")
+    }
+}
