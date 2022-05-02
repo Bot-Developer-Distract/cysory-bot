@@ -12,12 +12,16 @@ module.exports = {
         if (!User) {
             return message.reply('Xin hãy tag ai đó!')
         }
-    
+        
         const money = args[1]
         if (!money) {
             return message.reply('Xin hãy ghi số tiền muốn add!')
         }
         if (isNaN(parseInt(args[1]))) return message.reply(`**${money}** không phải giá trị loại Số!`)
+        if (money > 400000) {
+            message.reply('Chỉ có thể add tối đa \`$400.000\`!')
+            return
+        }
     
         db.add(`money_${User.id}`, money)
     

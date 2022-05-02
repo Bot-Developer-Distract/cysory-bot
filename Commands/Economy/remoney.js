@@ -12,19 +12,23 @@ module.exports = {
         if (!User) {
             return message.reply('Xin hãy tag ai đó!')
         }
-    
+
         const money = args[1]
         if (!money) {
             return message.reply('Xin hãy ghi số tiền muốn loại bỏ!')
         }
         if (isNaN(parseInt(args[1]))) return message.reply(`**${money}** không phải giá trị loại Số!`)
-    
-        db.subtract(`money_${User.id}`, money)
+
+        if (money > 400000) {
+            message.reply('Chỉ có thể add tối đa \`$400.000\`!')
+            return
+        }
     
         const Embed = new MessageEmbed()
         .setTitle('Remove money thành công!')
         .setDescription(`Đã loại bỏ \`$${money}\` từ <@${User.id}>`)
         .setFooter(`Removed by ${message.author.username}`, message.author.displayAvatarURL)
         message.channel.send({embeds:[Embed]})
+        db.subtract(`money_${User.id}`, money)
     }
 }

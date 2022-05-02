@@ -16,11 +16,12 @@ module.exports = {
             .setDescription(`✅ **_Đã ban ${member}_**\nLí do: ${reason}`)
             .setColor("#31bd3d")
             message.channel.send({embeds:[Embed]})
-        } else {
-            const Embed2 = new Discord.MessageEmbed()
-            .setDescription(`:x: **Không thể ban được vì người này có \`MANAGER_GUILDS\` hoặc không tồn tại!**`)
-            .setColor("#bf3232")
-            message.channel.send({embeds:[Embed2]})
+        }
+        if (!member) {
+            message.reply('Xin hãy mention ai đó!')
+        }
+        if (!reason) {
+            message.reply('Xin hãy ghi lí do!')
         }
     }
 }

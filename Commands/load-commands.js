@@ -23,7 +23,7 @@ module.exports = (client) => {
     }
   }
 
-  readCommands('.') // To Read All Commands of 'commands' Folder
+  readCommands('.')
 
   return commands
 }

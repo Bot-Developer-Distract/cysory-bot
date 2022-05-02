@@ -5,9 +5,9 @@ const client = new Discord.Client({
   "GUILD_INTEGRATIONS", "GUILD_MESSAGE_TYPING", "GUILD_PRESENCES"],
   allowedMentions: ["users"]
 })
-const loadCommands = require('./commands/load-commands'); // Add This
+const loadCommands = require('./commands/load-commands')
 
-client.once('ready', () => {
+client.on('ready', () => {
   // console log case
   {
     console.log("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓")
@@ -22,33 +22,20 @@ client.once('ready', () => {
     console.log("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛")
   }
   
+  // activity case
   setInterval(() => {
       const statuses = [
           `c/help | Kravon Lidan#0378`,
-          `c/help | Among Us`,
-          `c/help | Ukraine and Russia's war`,
-          `c/help | Exp 401`,
-          `c/help | Elder Ring`,
+          `${client.guilds.cache.size} sever | c/help`,
+          `Cysory đã 3 tuổi! | c/help`,
+          `The Backroom | c/help`,
+          `In Coding | c/help`,
       ]
 
       const status = statuses[Math.floor(Math.random() * statuses.length)]
-      client.user.setActivity(status, { type: "PLAYING"}) // Can Be WATCHING, STREAMING, LISTENING
-  }, 2000) // Second You Want to Change Status, This Cahnges Every 2 Seconds
-  loadCommands(client) // Add This
+      client.user.setActivity(status, { type: "PLAYING"})
+  }, 2000) 
+  loadCommands(client)
 })
-
-// say command
-{
-  client.on("message", message => {
-    const args = message.content.split(' ')
-    const cmd = args.shift().toLowerCase()
-    switch(cmd) {
-      case 'say':
-        if (message.deletable) message.delete()
-        message.channel.send(args.join(' '))
-        break;
-    }
-  })
-}
 
 client.login(token)

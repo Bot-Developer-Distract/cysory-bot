@@ -1,9 +1,9 @@
 const Discord = require("discord.js")
 module.exports = {
-    commands: ['botinfo'],
+    commands: ['botinfo', 'bot4'],
     description: 'information about bot',
 
-    callback: (message, args) => {
+    callback: (message, args, _, client) => {
         let os = require("os");
         const botinfoEmbed = new Discord.MessageEmbed()
         .setTitle("Information of Cysory com. bot")
@@ -14,7 +14,7 @@ module.exports = {
         .addField("Memory Usage", `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}/ ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB\``, true)
         .addField("Uptime ", `${duration(client.uptime).map(i=>`\`${i}\``).join(", ")}`, true)
         .addField("Company", "\`Cysory com.\`")
-        .setFooter("bot coded by Kravon Lidan #0378", "https://cdn.discordapp.com/avatars/867741983774212166/dab0ed9e326f4feb3164bc11215c7d0a.png?size=4096")
+        .setFooter("bot coded by Kravon Lidan #0378", "https://cdn.discordapp.com/avatars/867741983774212166/28d2f34b219f4b7bcccb374f98a51574.png?size=1024")
         message.channel.send({embeds:[botinfoEmbed]})
     
         function duration(duration, useMilli = false) {

@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports = {
-    commands: ['threadcreate'],
+    commands: ['threadcreate', 'thc'],
     description: 'create a thread',
 
     callback: (message, args) => {

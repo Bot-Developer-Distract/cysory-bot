@@ -1,4 +1,4 @@
-const { prefix } = require('../config.json') // For Prefix
+const { prefix } = require('../config.json')
 
 const validatePermissions = (permissions) => {
   const validPermissions = [
@@ -40,17 +40,17 @@ const validatePermissions = (permissions) => {
       throw new Error(`quyền không xác định: "${permission}"`)
     }
   }
-} // For Permissions Of A Member
+}
 
 module.exports = (client, commandOptions) => {
   let {
-    commands, // For Command Name
-    expectedArgs = '', // For Usage Of Command
-    permissionError = 'Bạn không có quyền hạn để dùng lệnh này.', // Permission Error
+    commands,
+    expectedArgs = '',
+    permissionError = 'Bạn không có quyền hạn để dùng lệnh này.',
     minArgs = 0,
     maxArgs = null,
-    permissions = [], // Permission A Member Needs A Use Command
-    requiredRoles = [], // Role A Member Needs To Use Command
+    permissions = [],
+    requiredRoles = [],
     callback,
   } = commandOptions
 
@@ -58,14 +58,12 @@ module.exports = (client, commandOptions) => {
     return
   }
 
-  // If A Command Is An Array
   if (typeof commands === 'string') {
     commands = [commands]
   }
 
-  console.log(`Command Loaded:- ${commands[0]}`) // Command Loaded/Started
+  console.log(`Command Loaded:- ${commands[0]}`)
 
-  // If Member Has Correct Permissions to Use Command
   if (permissions.length) {
     if (typeof permissions === 'string') {
       permissions = [permissions]
@@ -85,7 +83,6 @@ module.exports = (client, commandOptions) => {
         content.toLowerCase() === command
       ) {
 
-        // Member Has Required Permission to Use Command
         for (const permission of permissions) {
           const permission = message.member.permissions.has("ADMINISTRATOR")
           if (!permission) {
@@ -94,7 +91,6 @@ module.exports = (client, commandOptions) => {
           }
         }
 
-        // Member Has Required Role To Use Command
         for (const requiredRole of requiredRoles) {
           const role = guild.roles.cache.find(
             (role) => role.name === requiredRole
@@ -112,7 +108,6 @@ module.exports = (client, commandOptions) => {
 
         arguments.shift()
 
-        // Command Has Correct Arguments
         if (
           arguments.length < minArgs ||
           (maxArgs !== null && arguments.length > maxArgs)

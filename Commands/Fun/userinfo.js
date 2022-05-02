@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports = {
-    commands: ['userinfo'],
+    commands: ['userinfo', 'u4', 'whois'],
     description: 'information of user',
 
     callback: (message, args) => {

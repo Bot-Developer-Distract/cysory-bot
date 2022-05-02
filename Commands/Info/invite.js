@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports = {
-    commands: ['invite'],
+    commands: ['invite', 'vite'],
     description: 'give it invite link',
 
     callback: (message, args) => {

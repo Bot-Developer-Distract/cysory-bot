@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports = {
-    commands: ['threaddel', 'threaddelete'],
+    commands: ['threaddel', 'threaddelete', 'thd'],
     description: 'delete a thread',
 
     callback: (message, args) => {
