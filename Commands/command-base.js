@@ -1,4 +1,4 @@
-const { prefix } = require('../config.json')
+const db = require('quick.db')
 
 const validatePermissions = (permissions) => {
   const validPermissions = [
@@ -74,6 +74,16 @@ module.exports = (client, commandOptions) => {
 
   client.on('message', (message) => {
     const { member, content, guild } = message
+
+    const { def_prefix } = require('../config.json') 
+    let prefix = db.fetch(`prefix_${message.guild.id}`) 
+    if(prefix === null) prefix = db.set(`prefix_${message.guild.id}`, def_prefix)
+
+    // reset prefix khẩn cấp
+    if (message.content === 'reset') {
+      message.react('✅')
+      prefix = db.set(`prefix_${message.guild.id}`, def_prefix)
+    }
 
     for (const alias of commands) {
       const command = `${prefix}${alias.toLowerCase()}`

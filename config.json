@@ -1,4 +1,9 @@
 {
     "token": "OTUzMTQyMDk0NzIwMDE2NDQ0.YjAQvw.p8H8i3_0hBPM-0aDEOAehJqSsCs",
-    "prefix": "c/"
+    "def_prefix": "c/",
+    "version": "v4.0.0",
+    "embed_color": 8240363,
+	"success_color": 65280,
+	"fail_color": 16711680,
+	"timeout_color": 6381923
 }
