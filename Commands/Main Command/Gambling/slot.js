@@ -1,11 +1,11 @@
-const slots = ["<:bad:942789718440042576>","<:chua_he:943721688179277844>","<:discordjs:974904051160469514>","<:javascript:974904051177250836>","<:Github:965597169837043752>","<:python:974904051269517322>"]
-const turning = "<:blank:970659432335814666>"
+const slots = ["<:bad:942789718440042576>","<:chua_he:943721688179277844>","<:UNOGreen0:978145782362431508>","<:SuS:972359387542851624>","<:whoCare:979632389301096468>","<:UNOSpecialPlus4:978145974725799936>"]
+const turning = "<:blank:978621964287614986>"
 const random = require('random-number-csprng')
 const db = require('quick.db')
 const maxBet = 150000
 
 module.exports = ({
-	commands: ["slot"],
+	commands: ["slot", 's'],
 	desc:"Bet your money in the slot machine! Earn umessage to 10x your money!",
 
 	callback: async(message, args, _, client) => {

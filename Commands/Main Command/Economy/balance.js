@@ -9,6 +9,6 @@ module.exports = {
         let bal = db.fetch(`money_${User.id}`)
         if (bal === null) bal = '0'
     
-        message.channel.send(`<@${User.user.id}>!, Bạn hiện đang có **$${bal}** cusy <a:spining:975408505949417523> ! <a:NamaRich:963785200037425192>`)
+        message.channel.send(`<@${User.user.id}>!, Bạn hiện đang có **$${bal}** cusy <a:spining:975408505949417523> ! <a:NamaRich:981759739916591174>`)
     }
 }

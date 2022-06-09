@@ -21,9 +21,9 @@ client.on('ready', () => {
   setInterval(() => {
       const statuses = [
           `c/help | Kravon Lidan#0378`,
-          `${client.guilds.cache.size} sever | c/help`,
           `Cysory đã 3 tuổi! | c/help`,
           `The Backroom | c/help`,
+          `${client.guilds.cache.size} sever | c/help`,
           `In Coding | c/help`,
       ]
 
