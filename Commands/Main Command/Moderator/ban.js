@@ -3,7 +3,7 @@ module.exports = {
     commands: ['ban'],
     description: 'ban user',
     permissions: ['ADMINISTRATOR', 'MANAGE_GUILD'],
-    permissionError: 'Bạn không thể ban vì không có \`ADMINISTRATOR\`!',
+    permissionError: '**🚫 |** Bạn không thể ban vì không có \`ADMINISTRATOR\`!',
 
     callback: (message, args) => {
         const member = message.mentions.users.first()

@@ -3,12 +3,16 @@ module.exports = {
     commands: ['kick'],
     description: 'kick a user',
     permissions: ['ADMINISTRATOR', 'MANAGE_GUILD'],
-    permissionError: 'Bạn không thể kick vì không có \`ADMINISTRATOR\`!',
+    permissionError: '**🚫 |** Bạn không thể kick vì không có \`ADMINISTRATOR\`!',
 
     callback: (message, args) => {
         const member = message.mentions.users.first()
         args.shift()
         const reason = args.join(' ')
+        if (member === '<@953142094720016444>') {
+            message.reply('**🚫 |** Bạn không thể kick bot!')
+            return
+        }
         if (member) {
             const memberTarger = message.guild.members.cache.get(member.id)
             memberTarger.kick()

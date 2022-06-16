@@ -3,7 +3,7 @@ module.exports = {
     commands: ['embedcreate', 'ec'],
     description: 'create an embed without webhook',
     permissions: ['MANAGE_MESSAGES'],
-    permissionError: 'Bạn không thể tạo tin nhắn nhúng vì không có \`MANAGE_MESSAGES\`!',
+    permissionError: '**🚫 |** Bạn không thể tạo tin nhắn nhúng vì không có \`MANAGE_MESSAGES\`!',
 
     callback: (message, args, text) => {
         // Embed Options

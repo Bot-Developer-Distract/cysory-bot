@@ -52,7 +52,7 @@ module.exports = {
 
         var GameMsg
         if (boxCal === choice) {
-            GameMsg = `Bạn đã thắng **$${amount}** cusy <a:NamaRich:963785200037425192>!`
+            GameMsg = `Bạn đã thắng **$${amount}** cusy <a:Namarich:984796893005639690>!`
             db.add(`money_${User.id}`, amount)
         }
         if (boxCal !== choice) {

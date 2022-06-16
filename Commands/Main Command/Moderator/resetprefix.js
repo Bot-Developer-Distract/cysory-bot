@@ -4,7 +4,7 @@ module.exports = {
     commands: ['resetprefix', 'rp'],
     description: 'ReSet Prefix For Server', 
     permissions: 'MANAGE_GUILD', 
-    permissionError: 'Bạn không thể reset prefix vì không có \`ADMINISTRATOR\`!', 
+    permissionError: '**🚫 |** Bạn không thể reset prefix vì không có \`ADMINISTRATOR\`!', 
 
     callback: async(message, args, client) => {
 

@@ -2,7 +2,7 @@ module.exports = {
     commands: ['clear', 'cls'],
     description: 'Deletes Message',
     permissions: ['ADMINISTRATOR', 'MANAGE_GUILD'],
-    permissionError: 'Bạn không thể clear vì không có \`ADMINISTRATOR\`!',
+    permissionError: '**🚫 |** Bạn không thể clear vì không có \`ADMINISTRATOR\`!',
 
     callback: async(message, args) => {
         const amount = args[0]

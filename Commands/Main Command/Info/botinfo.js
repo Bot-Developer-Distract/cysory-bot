@@ -38,21 +38,21 @@ module.exports = {
             };
             let parts = []
             if (time.days) {
-                let ret = time.days + ' Day'
+                let ret = time.days + ' Ngày'
                 if (time.days !== 1) {
                     ret += 's'
                 }
                 parts.push(ret)
             }
             if (time.hours) {
-                let ret = time.hours + ' Hr'
+                let ret = time.hours + ' Giờ'
                 if (time.hours !== 1) {
                     ret += 's'
                 }
                 parts.push(ret)
             }
             if (time.minutes) {
-                let ret = time.minutes + ' Min'
+                let ret = time.minutes + ' Phút'
                 if (time.minutes !== 1) {
                     ret += 's'
                 }
@@ -60,14 +60,14 @@ module.exports = {
     
             }
             if (time.seconds) {
-                let ret = time.seconds + ' Sec'
+                let ret = time.seconds + ' Giây'
                 if (time.seconds !== 1) {
                     ret += 's'
                 }
                 parts.push(ret)
             }
             if (useMilli && time.milliseconds) {
-                let ret = time.milliseconds + ' ms'
+                let ret = time.milliseconds + ' Mili giây'
                 parts.push(ret)
             }
             if (parts.length === 0) {

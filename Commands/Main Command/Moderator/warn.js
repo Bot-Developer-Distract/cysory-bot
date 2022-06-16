@@ -3,7 +3,7 @@ module.exports = {
     commands: ['warn'],
     description: 'Warn a user',
     permissions: ['ADMINISTRATOR', 'MANAGE_GUILD'],
-    permissionError: 'Bạn không thể warn vì không có \`ADMINISTRATOR\`!',
+    permissionError: '**🚫 |** Bạn không thể warn vì không có \`ADMINISTRATOR\`!',
 
     callback: (message, args) => {
         const target = message.mentions.members.first()

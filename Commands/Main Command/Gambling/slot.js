@@ -80,11 +80,11 @@ module.exports = ({
         }
 
         //hien thi ket qua
-        let nameBet = `  **${message.author.username}** đã cược **$${amount}** cusy <:coins:963787195011977276>`
+        let nameBet = `  **${message.author.username}** đã cược **$${amount}** cusy <:heads:975408493437784134>`
         if (logging == -1) {
             result = `và mất hết.. <:frogeCry:929567855597461575>`;
         } else {
-            result = `và đã thắng **$${amount}** cusy! <:coins:963787195011977276>`
+            result = `và đã thắng **$${amount}** cusy! <:heads:975408493437784134>`
         }
 
         let msgresult = await message.reply(`\` ▁▁▁SLOTS▁▁▁ \`
