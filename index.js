@@ -8,8 +8,6 @@ const client = new Discord.Client({
 })
 const loadCommands = require('./Commands/load-commands')
 const db = require('quick.db')
-var Canvas = require('canvas');
-const { join } = require("path")
 
 client.on('ready', () => {
   // console log case
