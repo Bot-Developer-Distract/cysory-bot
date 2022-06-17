@@ -76,7 +76,7 @@ module.exports = (client, commandOptions) => {
     const { member, content, guild } = message
 
     const { def_prefix } = require('../config.json') 
-    let prefix = db.fetch(`prefix_${message.guild.id}`) 
+    let prefix = db.fetch(`prefix_${message.guild.id}`)
     if(prefix === null) prefix = db.set(`prefix_${message.guild.id}`, def_prefix)
 
     // reset prefix khẩn cấp

@@ -8,7 +8,7 @@ const client = new Discord.Client({
 })
 const loadCommands = require('./Commands/load-commands')
 const db = require('quick.db')
-const Canvas = require('canvas')
+var Canvas = require('canvas');
 const { join } = require("path")
 
 client.on('ready', () => {
