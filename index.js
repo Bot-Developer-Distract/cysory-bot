@@ -54,8 +54,7 @@ client.on('guildMemberAdd', async member => {
   const welcome = '986819503969165342'
   if(!member.guild) return
   const channel = member.guild.channels.cache.get(welcome)
-  const Embed4 = new Discord
-  channel.send({content: `> Chào mừng ${member} đã đến với cộng đồng Artist của bọn mình\n> Hãy đọc kĩ luật lệ và bắt đầu khám phá nhé!`, embeds: [Embed4]})
+  channel.send({content: `> Chào mừng ${member} đã đến với cộng đồng Artist của bọn mình\n> Hãy đọc kĩ luật lệ và bắt đầu khám phá nhé!`})
 })
 
 // tictactoe game
