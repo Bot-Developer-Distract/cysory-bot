@@ -52,7 +52,7 @@ client.on('message', message => {
 client.on('guildMemberAdd', async member => {
   const welcome = '986819503969165342'
   if(!member.guild) return
-  user.send('Cảm ơn bạn đã tham gia server của tụi mình, mình đã thêm 5,000 cusy vào tài khoản của bạn rồi!')
+  member.send('Cảm ơn bạn đã tham gia server của tụi mình, mình đã thêm 50,000 cusy vào tài khoản của bạn rồi!')
   const channel = member.guild.channels.cache.get(welcome)
   const Avt = member.user.displayAvatarURL({ format: 'png', size: 1024, dynamic: true })
   const Embed4 = new Discord.MessageEmbed()
