@@ -68,7 +68,8 @@ client.on('guildMemberAdd', async member => {
 client.on('guildMemberRemove', async member => {
   const Leavechan = '987593068259737640'
   if (!member.guild) return
-  Leavechan.send(`${member} đã rời khỏi server, mong bạn sẽ quay lại.. 👋🥲`)
+  const channel2 = member.guild.channels.cache.get(Leavechan)
+  channel2.send(`${member} đã rời khỏi server, mong bạn sẽ quay lại.. 👋`)
 })
 
 // tictactoe game
