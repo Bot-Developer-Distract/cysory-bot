@@ -4,7 +4,7 @@ module.exports = {
     description: 'delete a thread',
 
     callback: (message, args) => {
-        const Named = args[0]
+        const Named = args.join(' ')
         if (!Named) {
             message.reply('**🚫 |** Xin hãy ghi tên chủ đề!')
             return

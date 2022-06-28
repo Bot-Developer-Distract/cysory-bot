@@ -4,7 +4,7 @@ module.exports = {
     description: 'create a thread',
 
     callback: (message, args) => {
-        const Named = args[0]
+        const Named = args.join(' ')
         if (!Named) {
             message.reply('**🚫 |** Xin hãy ghi tên chủ đề!')
             return
@@ -14,7 +14,7 @@ module.exports = {
             autoArchiveDuration: 60,
         });
         const Embed = new Discord.MessageEmbed()
-        .setDescription(`✅ **_Đã tạo thread \`${Named}\` mang số \`${thread}\` thành công!_**`)
+        .setDescription(`✅ **_Đã tạo thread \`${Named}\`thành công!_**`)
         .setColor("#31bd3d")
         message.channel.send({embeds:[Embed]})
     }

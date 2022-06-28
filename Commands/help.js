@@ -7,7 +7,7 @@ module.exports = {
         const But = new Discord.MessageButton()
         .setLabel('〽️ Join')
         .setStyle('LINK')
-        .setURL('https://discord.gg/JU9VGsvvRj')
+        .setURL('https://discord.gg/Bpx5MxtgQq')
         
         const row = new Discord.MessageActionRow()
         .addComponents([But])

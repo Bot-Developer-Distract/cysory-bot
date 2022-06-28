@@ -1,30 +1,28 @@
-const Discord = require("discord.js")
 module.exports = {
     commands: ['kick'],
     description: 'kick a user',
     permissions: ['ADMINISTRATOR', 'MANAGE_GUILD'],
     permissionError: '**🚫 |** Bạn không thể kick vì không có \`ADMINISTRATOR\`!',
 
-    callback: (message, args) => {
-        const member = message.mentions.users.first()
-        args.shift()
-        const reason = args.join(' ')
-        if (member === '<@953142094720016444>') {
-            message.reply('**🚫 |** Bạn không thể kick bot!')
+    callback: async(message, args, client) => {
+        const Member = message.mentions.members.first()
+        const reason = args.slice(1).join(' ')
+        if (!reason) {
+            message.reply('**🚫 |** Hãy ghi lí do!')
             return
         }
-        if (member) {
-            const memberTarger = message.guild.members.cache.get(member.id)
-            memberTarger.kick()
-            const Embed = new Discord.MessageEmbed()
-            .setDescription(`✅ **_Đã đuổi ${member}_**\nLí do: ${reason}`)
-            .setColor("#31bd3d")
-            message.channel.send({embeds:[Embed]})
-        } else {
-            const Embed2 = new Discord.MessageEmbed()
-            .setDescription(`:x: **Không thể đuổi vì người này có \`MANAGER_GUILDS\` hoặc không tồn tại!**`)
-            .setColor("#bf3232")
-            message.channel.send({embeds:[Embed2]})
+
+        if (!Member) {
+            message.reply('**🚫 |** Hãy mention ai đó!')
+            return
         }
+
+        if(Member.roles.highest.position > message.guild.members.resolve(client.user).roles.highest.position) {
+            message.channel.send(`**❌ |** Không thể kick ${Member}!`)
+            return
+        }
+        Member.send(`Bạn đã bị kick khỏi server \`${message.guild.name}\` vì **${reason}**`)
+        Member.kick(reason)
+        message.channel.send(`**✅ |** Đã kick ${Member} vì ${reason}`)
     }
 }
